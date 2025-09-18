@@ -75,7 +75,7 @@ Temporal analysis and object tracking:
 - **Motion Detection**: Frame differencing, temporal gradients
 - **Kalman Filtering**: State estimation and prediction
 - **Motion Segmentation**: Separating moving objects from background
-- **Action Recognition**: Temporal pattern analysis
+- **Action Recognition**: SlowFast, VideoMAE, TimeSformer, V-JEPA, temporal pattern analysis
 - **Multi-Object Tracking**: Data association, trajectory management
 
 ## SLAM (Simultaneous Localization and Mapping)
@@ -99,7 +99,9 @@ Neural network approaches:
 - **Depth Estimation**: MonoDepth, stereo matching networks
 - **Neural Rendering**: NeRF variants (Instant-NGP, Mip-NeRF), neural volume rendering
 - **3D Deep Learning**: 3D CNNs, point cloud networks, voxel-based approaches
+- **Video Understanding**: 3D CNNs (I3D, C3D), two-stream networks, video transformers
 - **Visual Transformers**: Vision Transformer (ViT) applications
+- **Self-Supervised Learning**: Contrastive learning, masked modeling, representation learning
 - **Generative Models**: GANs for image synthesis, diffusion models
 - **Neural SLAM**: Learning-based SLAM approaches
 
