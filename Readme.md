@@ -11,6 +11,7 @@ A comprehensive collection of computer vision algorithms, techniques, and implem
 - [Motion Analysis and Tracking](#motion-analysis-and-tracking)
 - [SLAM (Simultaneous Localization and Mapping)](#slam-simultaneous-localization-and-mapping)
 - [Deep Learning for Computer Vision](#deep-learning-for-computer-vision)
+- [Model Optimization and Deployment](#model-optimization-and-deployment)
 - [Applications](#applications)
 
 ## Image Processing Fundamentals
@@ -104,6 +105,18 @@ Neural network approaches:
 - **Self-Supervised Learning**: Contrastive learning, masked modeling, representation learning
 - **Generative Models**: GANs for image synthesis, diffusion models
 - **Neural SLAM**: Learning-based SLAM approaches
+
+## Model Optimization and Deployment
+
+Techniques for efficient deployment of computer vision models:
+- **Post-Training Quantization**: Model compression (2x-4x) without retraining, INT8/FP16 optimization
+- **Quantization-Aware Training**: Training with quantization simulation for improved accuracy
+- **Pruning**: Structured and unstructured weight removal, magnitude-based pruning
+- **Knowledge Distillation**: Teacher-student training, model compression, soft targets
+- **Sparsity**: Sparse tensor storage, structured sparsity, magnitude pruning
+- **Speculative Decoding**: Draft model acceleration, parallel token generation
+- **Hardware Optimization**: TensorRT, ONNX Runtime, mobile frameworks (Core ML, TensorFlow Lite)
+- **Model Serving**: Batch optimization, dynamic batching, model caching
 
 ## Applications
 
