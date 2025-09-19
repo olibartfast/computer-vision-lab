@@ -2,6 +2,35 @@
 
 A comprehensive collection of computer vision algorithms, techniques, and implementations covering fundamental to advanced topics in the field.
 
+**Who is this for?** Researchers, students, and practitioners working on computer vision projects. This repository bridges classical computer vision with modern deep learning approaches, providing modular examples and implementations.
+
+**What's inside?** From basic image processing and feature detection to cutting-edge neural rendering and SLAM systems. Each section includes both theoretical foundations and practical implementations.
+
+## 📁 Repository Structure
+
+```
+computer-vision-lab/
+├─ cvlab/                # Core library modules
+│  ├─ image/            # Image processing fundamentals
+│  ├─ features/         # Feature detection and matching
+│  ├─ geometry/         # Geometric computer vision
+│  ├─ tracking/         # Motion analysis and tracking
+│  ├─ slam/             # SLAM implementations
+│  ├─ deep/             # Deep learning approaches
+│  └─ deploy/           # Model optimization and deployment
+├─ examples/             # Runnable scripts and notebooks
+│  ├─ basic/            # Fundamental CV examples
+│  ├─ deep_learning/    # Neural network examples
+│  └─ applications/     # Real-world applications
+├─ data/                 # Sample datasets and inputs
+├─ tests/               # Unit and integration tests
+├─ docs/                # Documentation and tutorials
+├─ requirements.txt     # CPU dependencies
+├─ requirements-gpu.txt # GPU dependencies
+├─ environment.yml      # Conda environment
+└─ README.md
+```
+
 ## 📋 Table of Contents
 
 - [Image Processing Fundamentals](#image-processing-fundamentals)
@@ -18,7 +47,7 @@ A comprehensive collection of computer vision algorithms, techniques, and implem
 
 Basic image operations and transformations:
 - **Image Function Operations**: Pixel-level operations, intensity transformations
-- **Linear Transforms**: Scaling, rotation, shearing, translation
+- **Geometric/Affine Transforms**: Scaling, rotation, shearing, translation, warping
 - **Homogeneous Coordinates**: Projective geometry representations
 - **Histogram Processing**: Histogram equalization, CLAHE, histogram matching
 - **Intensity Transformations**: Gamma correction, log transforms, contrast stretching
@@ -34,9 +63,9 @@ Image comparison and feature matching techniques:
 - **Keypoint Descriptors**: SIFT, SURF, ORB, BRIEF
 - **Feature Matching**: Brute-force, FLANN-based matching
 - **Statistical Measures**: Image moments, similarity metrics, distance functions
-- **Distribution-Based Methods**: Cross entropy, histogram comparison
+- **Distribution-Based Methods**: Bhattacharyya distance, KL/JS divergence, Chi-square, Earth Mover's Distance
 - **Cross Correlation**: Template matching, normalized cross-correlation
-- **Convolution**: 2D convolution, separable filters
+- **Convolution vs Correlation**: 2D convolution, separable filters (note: OpenCV filter2D implements correlation)
 
 ## Geometric Computer Vision
 
@@ -50,14 +79,14 @@ Mathematical foundations of computer vision:
 - **Triangulation**: 3D point reconstruction from multiple views
 - **Pose Estimation**: PnP algorithms, camera localization
 - **Robust Estimation**: M-estimators, MSAC, PROSAC, LO-RANSAC
-- **Geometric Transformations**: Affine, projective, similarity transforms
 
 ## 3D Computer Vision
 
 Three-dimensional scene understanding:
 - **Stereo Vision**: Disparity estimation, depth maps
-- **Structure from Motion (SfM)**: 3D reconstruction from image sequences
-- **Multi-view Stereo**: Dense 3D reconstruction
+- **Structure from Motion (SfM)**: COLMAP, 3D reconstruction from image sequences
+- **Multi-view Stereo**: Dense 3D reconstruction, PatchMatch (classical and deep)
+- **TSDF Fusion**: KinectFusion, volumetric integration
 - **Neural Radiance Fields (NeRF)**: Neural volume rendering, novel view synthesis
 - **Gaussian Splatting**: 3D Gaussian primitives, real-time differentiable rendering
 - **Point Cloud Processing**: Registration, filtering, segmentation
@@ -70,40 +99,44 @@ Three-dimensional scene understanding:
 
 Temporal analysis and object tracking:
 - **Background Subtraction**: GMM, running average, ViBe, deep learning approaches
-- **Optical Flow**: Lucas-Kanade, Horn-Schunck methods
+- **Optical Flow**: Lucas-Kanade, Horn-Schunck, RAFT, GMFlow methods
 - **Visual Odometry**: Camera motion estimation from image sequences
-- **Object Tracking**: Mean-shift, CamShift, particle filters, Kalman tracking
+- **Object Tracking**: KCF/CSRT, SiamFC/RPN, SORT/DeepSORT, ByteTrack, BoT-SORT
 - **Motion Detection**: Frame differencing, temporal gradients
 - **Kalman Filtering**: State estimation and prediction
 - **Motion Segmentation**: Separating moving objects from background
 - **Action Recognition**: SlowFast, VideoMAE, TimeSformer, V-JEPA, temporal pattern analysis
-- **Multi-Object Tracking**: Data association, trajectory management
+- **Multi-Object Tracking**: Data association, trajectory management, re-identification integration
 
 ## SLAM (Simultaneous Localization and Mapping)
 
 Real-time localization and mapping systems:
-- **Visual SLAM**: MonoSLAM, PTAM, ORB-SLAM
-- **Visual-Inertial SLAM**: Sensor fusion approaches
-- **Loop Closure Detection**: Place recognition algorithms
+- **Visual SLAM**: MonoSLAM, PTAM, ORB-SLAM, ORB-SLAM3
+- **Direct Methods**: DSO, LSD-SLAM, photometric approaches
+- **Visual-Inertial SLAM**: VINS-Mono/Fusion, OKVIS, sensor fusion approaches
+- **Neural SLAM**: NICE-SLAM, iMAP, DROID-SLAM, learning-based approaches
+- **Loop Closure Detection**: Place recognition algorithms, bag-of-words
 - **Bundle Adjustment**: Optimization of camera poses and 3D points
 - **Keyframe Management**: Efficient map representation
-- **Dense SLAM**: Real-time dense reconstruction
+- **Dense SLAM**: Real-time dense reconstruction, ElasticFusion
 - **Semantic SLAM**: Object-aware mapping
 
 ## Deep Learning for Computer Vision
 
 Neural network approaches:
 - **Convolutional Neural Networks**: CNN architectures for vision tasks
-- **Object Detection**: YOLO, R-CNN, SSD implementations
-- **Semantic Segmentation**: FCN, U-Net, DeepLab
-- **Instance Segmentation**: Mask R-CNN, YOLACT
+- **Object Detection**: YOLO (v5/v8/Next), R-CNN, DETR/Deformable DETR, RT-DETR
+- **Semantic Segmentation**: FCN, U-Net, DeepLab, SegFormer
+- **Instance Segmentation**: Mask R-CNN, YOLACT, Mask2Former
+- **Panoptic Segmentation**: Unified instance and semantic segmentation
+- **Foundation Models**: SAM (Segment Anything), CLIP, DINOv2
 - **Depth Estimation**: MonoDepth, stereo matching networks
 - **Neural Rendering**: NeRF variants (Instant-NGP, Mip-NeRF), neural volume rendering
-- **3D Deep Learning**: 3D CNNs, point cloud networks, voxel-based approaches
+- **3D Deep Learning**: PointNet/PointNet++, KPConv, MinkowskiEngine, Point Transformers
 - **Video Understanding**: 3D CNNs (I3D, C3D), two-stream networks, video transformers
-- **Visual Transformers**: Vision Transformer (ViT) applications
+- **Visual Transformers**: ViT, Swin Transformer, DeiT, DINO applications
 - **Self-Supervised Learning**: Contrastive learning, masked modeling, representation learning
-- **Generative Models**: GANs for image synthesis, diffusion models
+- **Generative Models**: Stable Diffusion, ControlNet, video diffusion models
 - **Neural SLAM**: Learning-based SLAM approaches
 
 ## Model Optimization and Deployment
@@ -114,9 +147,10 @@ Techniques for efficient deployment of computer vision models:
 - **Pruning**: Structured and unstructured weight removal, magnitude-based pruning
 - **Knowledge Distillation**: Teacher-student training, model compression, soft targets
 - **Sparsity**: Sparse tensor storage, structured sparsity, magnitude pruning
-- **Speculative Decoding**: Draft model acceleration, parallel token generation
+- **Dynamic Inference**: Early-exiting, token pruning (for ViTs), multi-scale and dynamic resolution
+- **Graph Optimization**: Operator fusion, kernel autotuning, TVM compilation
 - **Hardware Optimization**: TensorRT, ONNX Runtime, mobile frameworks (Core ML, TensorFlow Lite)
-- **Model Serving**: Batch optimization, dynamic batching, model caching
+- **Model Serving**: Triton Inference Server, TorchServe, FastAPI/gRPC, batch optimization
 
 ## Applications
 
@@ -128,26 +162,81 @@ Real-world computer vision applications:
 - **Industrial Inspection**: Quality control, defect detection
 - **Surveillance**: Activity recognition, anomaly detection
 
+## 📊 Evaluation Metrics
+
+Common metrics for computer vision tasks:
+- **Image Quality**: PSNR, SSIM, LPIPS, FID for image generation/restoration
+- **Object Detection**: mAP, mAP@50, mAP@75, precision, recall, F1-score
+- **Segmentation**: mIoU, pixel accuracy, dice coefficient, boundary F1-score
+- **Depth Estimation**: AbsRel, RMSE, δ1/δ2/δ3 accuracy thresholds
+- **Optical Flow**: End-Point Error (EPE), angular error, AUC
+- **Tracking**: IDF1, HOTA, MOTA, MOTP, identity switches
+- **Action Recognition**: Top-1/Top-5 accuracy, temporal localization metrics
+- **3D Reconstruction**: Chamfer distance, F-score, completeness, accuracy
+
 ## 🛠️ Technologies Used
 
 - **Programming Languages**: Python, C++
-- **Libraries**: OpenCV, NumPy, SciPy, scikit-image
-- **Deep Learning**: TensorFlow, PyTorch, Keras
-- **3D Processing**: Open3D, PCL (Point Cloud Library)
-- **Visualization**: Matplotlib, Plotly, VTK
+- **Libraries**: OpenCV, NumPy, SciPy, scikit-image, PIL/Pillow
+- **Deep Learning**: PyTorch, TensorFlow, Keras, Hugging Face Transformers
+- **3D Processing**: Open3D, PCL (Point Cloud Library), trimesh
+- **Optimization**: TensorRT, ONNX, OpenVINO, TensorFlow Lite
+- **Visualization**: Matplotlib, Plotly, VTK, Weights & Biases
+- **Experiment Tracking**: TensorBoard, Weights & Biases, MLflow
 
 ## 🚀 Getting Started
+
+### Requirements
+- **Python**: 3.8+ (tested on 3.8, 3.9, 3.10, 3.11)
+- **OS**: Linux, macOS, Windows
+- **CUDA**: 11.8+ for GPU acceleration (optional)
+
+### Installation
 
 ```bash
 # Clone the repository
 git clone https://github.com/olibartfast/computer-vision-lab.git
 cd computer-vision-lab
 
-# Install dependencies
+# CPU-only installation
 pip install -r requirements.txt
 
-# Run examples
-python examples/basic_image_processing.py
+# GPU installation (CUDA 11.8+)
+pip install -r requirements-gpu.txt
+
+# Or use conda environment
+conda env create -f environment.yml
+conda activate cv-lab
+```
+
+### Quick Examples
+
+```bash
+# Feature matching demo (SIFT/ORB)
+python examples/features/match.py --img1 data/box.png --img2 data/box_in_scene.png --method orb
+
+# Camera calibration
+python examples/geometry/calibrate.py --images data/chessboard/*.png --square_size 0.024
+
+# RAFT optical flow
+python examples/motion/optical_flow.py --model raft --video data/drive.mp4
+
+# Object detection with YOLO
+python examples/detection/detect.py --model yolov8 --input data/street.jpg
+
+# SAM segmentation
+python examples/segmentation/sam_demo.py --image data/room.jpg --prompt "chair"
+```
+
+### Data Setup
+```bash
+# Download sample datasets
+python scripts/download_data.py --datasets basic stereo slam
+
+# Or manually place your data in:
+# data/images/     - sample images
+# data/videos/     - video sequences  
+# data/calibration/ - calibration patterns
 ```
 
 ## 📚 Resources
