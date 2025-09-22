@@ -1,10 +1,6 @@
 # Computer Vision Lab
 
-A comprehensive collection of computer vision algorithms, techniques, and implementations covering fundamental to advanced topics in the field.
-
-**Who is this for?** Researchers, students, and practitioners working on computer vision projects. This repository bridges classical computer vision with modern deep learning approaches, providing modular examples and implementations.
-
-**What's inside?** From basic image processing and feature detection to cutting-edge neural rendering and SLAM systems. Each section includes both theoretical foundations and practical implementations.
+This repository, which is still a work in progress, serves as a reference guide and outline covering the fundamentals and techniques of computer vision. Topics range from basic image processing and feature detection to cutting-edge neural rendering and SLAM systems.
 
 ## 📁 Repository Structure
 
