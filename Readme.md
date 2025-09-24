@@ -180,60 +180,7 @@ Common metrics for computer vision tasks:
 - **Visualization**: Matplotlib, Plotly, VTK, Weights & Biases
 - **Experiment Tracking**: TensorBoard, Weights & Biases, MLflow
 
-## 🚀 Getting Started
 
-### Requirements
-- **Python**: 3.8+ (tested on 3.8, 3.9, 3.10, 3.11)
-- **OS**: Linux, macOS, Windows
-- **CUDA**: 11.8+ for GPU acceleration (optional)
-
-### Installation
-
-```bash
-# Clone the repository
-git clone https://github.com/olibartfast/computer-vision-lab.git
-cd computer-vision-lab
-
-# CPU-only installation
-pip install -r requirements.txt
-
-# GPU installation (CUDA 11.8+)
-pip install -r requirements-gpu.txt
-
-# Or use conda environment
-conda env create -f environment.yml
-conda activate cv-lab
-```
-
-### Quick Examples
-
-```bash
-# Feature matching demo (SIFT/ORB)
-python examples/features/match.py --img1 data/box.png --img2 data/box_in_scene.png --method orb
-
-# Camera calibration
-python examples/geometry/calibrate.py --images data/chessboard/*.png --square_size 0.024
-
-# RAFT optical flow
-python examples/motion/optical_flow.py --model raft --video data/drive.mp4
-
-# Object detection with YOLO
-python examples/detection/detect.py --model yolov8 --input data/street.jpg
-
-# SAM segmentation
-python examples/segmentation/sam_demo.py --image data/room.jpg --prompt "chair"
-```
-
-### Data Setup
-```bash
-# Download sample datasets
-python scripts/download_data.py --datasets basic stereo slam
-
-# Or manually place your data in:
-# data/images/     - sample images
-# data/videos/     - video sequences  
-# data/calibration/ - calibration patterns
-```
 
 ## 📚 Resources
 
@@ -242,10 +189,3 @@ python scripts/download_data.py --datasets basic stereo slam
 - [OpenCV Documentation](https://docs.opencv.org/)
 - [SLAM Literature](https://github.com/kanster/awesome-slam)
 
-## 🤝 Contributing
-
-Contributions are welcome! Please read our contributing guidelines and submit pull requests for any improvements.
-
-## 📄 License
-
-This project is licensed under the MIT License - see the LICENSE file for details.
