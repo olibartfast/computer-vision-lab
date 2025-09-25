@@ -183,9 +183,10 @@ Common metrics for computer vision tasks:
 
 
 ## 📚 Resources
-
-- [Computer Vision: Algorithms and Applications](http://szeliski.org/Book/) by Richard Szeliski
-- [Multiple View Geometry](https://www.robots.ox.ac.uk/~vgg/hzbook/) by Hartley & Zisserman
-- [OpenCV Documentation](https://docs.opencv.org/)
-- [SLAM Literature](https://github.com/kanster/awesome-slam)
+- **[Computer Vision: Algorithms and Applications](http://szeliski.org/Book/)**  
+- **[Multiple View Geometry in Computer Vision](https://www.robots.ox.ac.uk/~vgg/hzbook/)**  
+- **[OpenCV Documentation](https://docs.opencv.org/)**  
+- **[Hugging Face Courses](https://huggingface.co/learn)**  
+- **[Computer Vision Specialization — University of Colorado Boulder](https://www.coursera.org/specializations/computer-vision-cu)**  
+- **[NVIDIA-Certified Associate: Multimodal Generative AI (NCA-GENM)](https://www.nvidia.com/en-us/learn/certification/generative-ai-multimodal-associate/)**  
 
